@@ -157,22 +157,22 @@ public class ListSE {
     }
 
     public void deleteKid(int place){
-
+        //si el lugar a borrar es la cabeza, solo hago que la cabeza sea la segunda persona
         if (place == 1) {
             head = head.getNext();
         }
         else {
-
+            //si no, defino mis 2 ayudantes...
             Node temp = head;
             Node previous = null;
-
+            //ciclo por cada persona en la fila hasta encontrar la persona del lugar
             for (int i = 1; i < place; i++){
-
+                
                 previous = temp;
                 temp = temp.getNext();
 
             }
-
+            // cuando haya llegado a la persona del lugar, hago que mi ayudante de adelante agarre a la persona que tiene adelante, y despues, que el ayudante de atras lo agarre a el, dejando afuera a la persona que estaba entre ellos 2
             temp = temp.getNext();
             previous.setNext(temp);
 
